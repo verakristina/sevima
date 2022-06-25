@@ -7,17 +7,19 @@
         <link rel="icon" href="assets/img/favicon.png" type="image/png">
         <title>Learn IT Education</title>
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="assets/css/bootstrap.css">
-        <link rel="stylesheet" href="assets/vendors/linericon/style.css">
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css">
-        <link rel="stylesheet" href="assets/vendors/lightbox/simpleLightbox.css">
-        <link rel="stylesheet" href="assets/vendors/nice-select/css/nice-select.css">
-        <link rel="stylesheet" href="assets/vendors/animate-css/animate.css">
-        <link rel="stylesheet" href="assets/vendors/popup/magnific-popup.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/bootstrap.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/vendors/linericon/style.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/vendors/lightbox/simpleLightbox.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/vendors/nice-select/css/nice-select.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/vendors/animate-css/animate.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/vendors/popup/magnific-popup.css">
         <!-- main css -->
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/responsive.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/responsive.css">
+		
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.4/dist/sweetalert2.all.min.js"></script>
     </head>
     <body>
         
@@ -43,7 +45,7 @@
             	<nav class="navbar navbar-expand-lg navbar-light">
 					<div class="container">
 						<!-- Brand and toggle get grouped for better mobile display -->
-						<a class="navbar-brand logo_h" href="index.html"><img src="assets/img/logo.png" alt=""></a>
+						<a class="navbar-brand logo_h" href="index.html"><img src="<?php echo base_url() ?>assets/img/logo.png" alt=""></a>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>

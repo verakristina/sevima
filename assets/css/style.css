@@ -283,6 +283,36 @@ button:focus {
 
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
+
+.bg-registration {
+	background-color: white;
+	border-radius: 30px;
+	box-shadow: 0 1.2px 4.6px -21px rgba(0, 0, 0, 0.006),
+		0 2.6px 10.2px -21px rgba(0, 0, 0, 0.013),
+		0 4.4px 17.4px -21px rgba(0, 0, 0, 0.019),
+		0 6.8px 26.8px -21px rgba(0, 0, 0, 0.024),
+		0 10px 39.7px -21px rgba(0, 0, 0, 0.03),
+		0 14.7px 58.3px -21px rgba(0, 0, 0, 0.035),
+		0 22.1px 87.4px -21px rgba(0, 0, 0, 0.041),
+		0 35.2px 139.3px -21px rgba(0, 0, 0, 0.048),
+		0 66px 261px -21px rgba(0, 0, 0, 0.07);
+
+	font-family: "Poppins", sans-serif !important;
+}
+
+.registration-title {
+	font-family: "Poppins", sans-serif !important;
+	color: #212529;
+}
+.btn-modal {
+	font-weight: 600;
+	font-size: 20px;
+	background-color: #4dbf1c;
+	color: white;
+	box-shadow: 0 2.4px 5px rgba(0, 0, 0, -0.005),
+		0 6.1px 12.6px rgba(0, 0, 0, -0.004), 0 12.6px 25.7px rgba(0, 0, 0, 0.007),
+		0 27px 52.9px rgba(0, 0, 0, 0.028), 0 100px 145px rgba(0, 0, 0, 0.07);
+}
 /* Home Banner Area css
 ============================================================================================ */
 .home_banner_area {
