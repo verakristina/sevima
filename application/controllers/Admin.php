@@ -121,5 +121,93 @@ class Admin extends CI_Controller
         $this->session->set_flashdata('success-delete', 'berhasil');
         redirect('admin/data_siswa');
     }
+
+    //guru
+
+    public function data_guru()
+    {
+        $this->load->model('m_guru');
+        $data['user'] = $this->db->get_where('admin', ['email' =>
+            $this->session->userdata('email')])->row_array();
+
+        $data['user'] = $this->m_guru->tampil_data()->result();
+        $this->load->view('template_admin/head');
+        $this->load->view('admin/data_guru', $data);
+        $this->load->view('template_admin/footer');
+    }
+
+    public function add_guru()
+    {
+        $this->form_validation->set_rules('nip', 'Nip', 'required|trim|min_length[4]', [
+            'required' => 'Harap isi kolom NIP.',
+            'min_length' => 'NIP terlalu pendek.',
+        ]);
+
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[guru.email]', [
+            'is_unique' => 'Email ini telah digunakan!',
+            'required' => 'Harap isi kolom email.',
+            'valid_email' => 'Masukan email yang valid.',
+        ]);
+
+        $this->form_validation->set_rules('nama', 'Nama', 'required|trim|min_length[4]', [
+            'required' => 'Harap isi kolom nAMA.',
+            'min_length' => 'Nama terlalu pendek.',
+        ]);
+
+        $this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[6]|matches[password2]', [
+            'required' => 'Harap isi kolom Password.',
+            'matches' => 'Password tidak sama!',
+            'min_length' => 'Password terlalu pendek',
+        ]);
+        $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password]', [
+            'matches' => 'Password tidak sama!',
+        ]);
+
+       
+        $data = [
+            'nip' => htmlspecialchars($this->input->post('nip', true)),
+            'email' => htmlspecialchars($this->input->post('email', true)),
+            'nama_guru' => htmlspecialchars($this->input->post('nama', true)),
+            'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+            'nama_mapel' => htmlspecialchars($this->input->post('mapel', true)),
+        ];
+
+        $this->db->insert('guru', $data);
+
+        $this->session->set_flashdata('success-reg', 'Berhasil!');
+        redirect(base_url('admin/data_guru'));
+    }    
+
+    public function guru_edit()
+    {
+        $this->load->model('m_guru');
+        $nip = $this->input->post('nip');
+        $nama = $this->input->post('nama');
+        $email = $this->input->post('email');
+
+        $data = array(
+            'nip' => $nip,
+            'nama_guru' => $nama,
+            'email' => $email,
+
+        );
+
+        $where = array(
+            'nip' => $nip,
+        );
+
+        $this->m_guru->update_data($where, $data, 'guru');
+        $this->session->set_flashdata('success-edit', 'berhasil');
+        redirect('admin/data_guru');
+    }
+
+    public function delete_guru($nip)
+    {
+        $this->load->model('m_guru');
+        $where = array('nip' => $nip);
+        $this->m_guru->delete_guru($where, 'guru');
+        $this->session->set_flashdata('user-delete', 'berhasil');
+        redirect('admin/data_guru');
+    }
 }
 ?>
