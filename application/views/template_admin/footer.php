@@ -37,16 +37,16 @@
 <script src="assets/plugins/moment/moment.min.js"></script>
 <script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="asstes/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Summernote -->
-<script src="asstes/plugins/summernote/summernote-bs4.min.js"></script>
+<script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
 <!-- overlayScrollbars -->
-<script src="asstes/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
-<script src="asstes/dist/js/adminlte.js"></script>
+<script src="assets/dist/js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="asstes/dist/js/demo.js"></script>
+<script src="assets/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="asstes/dist/js/pages/dashboard.js"></script>
+<script src="assets/dist/js/pages/dashboard.js"></script>
 </body>
 </html>

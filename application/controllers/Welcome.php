@@ -100,13 +100,13 @@ class Welcome extends CI_Controller {
                 $this->session->set_flashdata('email', $email);
                 $this->session->set_flashdata('password', $password);
                 $this->session->set_flashdata('fail-pass', 'Gagal!');
-                redirect(base_url('welcome/admin'));
+                redirect(base_url('welcome'));
             }
         } else {
             $this->session->set_flashdata('email', $email);
             $this->session->set_flashdata('password', $password);
             $this->session->set_flashdata('fail-login', 'Gagal!');
-            redirect(base_url('welcome/admin'));
+            redirect(base_url('welcome'));
         }
     }
 
