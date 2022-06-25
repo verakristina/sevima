@@ -19,7 +19,12 @@
         <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
         <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/responsive.css">
 		
-		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.4/dist/sweetalert2.all.min.js"></script>
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="<?= base_url('assets/') ?>js/jquery-3.3.1.min.js"></script>
+    <script src="<?= base_url('assets/') ?>js/popper.js"></script>
+    <script src="<?= base_url('assets/') ?>js/bootstrap.min.js"></script>
+
     </head>
     <body>
         
@@ -54,16 +59,17 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 							<ul class="nav navbar-nav menu_nav ml-auto">
-								<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
-								<li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li> 
+								<li class="nav-item active"><a class="nav-link" href="<?= base_url('welcome') ?>">Home</a></li> 
+								<li class="nav-item"><a class="nav-link" href="<?= base_url('welcome/about') ?>">About</a></li> 
 								<li class="nav-item submenu dropdown">
-									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Courses</a>
+									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
 									<ul class="dropdown-menu">
-										<li class="nav-item"><a class="nav-link" href="courses.html">Courses</a>
-										<li class="nav-item"><a class="nav-link" href="course-details.html">Course Details</a></li>
+										<li class="nav-item"><a class="nav-link" href="<?= base_url('welcome') ?>">Sebagai Admin</a>
+										<li class="nav-item"><a class="nav-link" href="courses.html">Sebagai Guru</a>
+										<li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModalCenter">Sebagai Siswa</a></li>
 									</ul>
 								</li> 
-								<li class="nav-item"><a class="nav-link" href="contact.html">Login</a></li>
+								<li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModalCenter">Masuk</a></li>
 							</ul>
 						</div> 
 					</div>

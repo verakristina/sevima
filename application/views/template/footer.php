@@ -80,7 +80,134 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		<!--================ End footer Area  =================-->
         
         
-        
+ <!-- Start Login Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title text-dark font-weight-bold" style="color:#212529 !important;" id="exampleModalCenterTitle">
+                    Form Login Siswa</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+                            <img src="<?= base_url('assets/'); ?>img/modal-login-2.png" class="img-fluid img-responsive mx-auto " style="height: 350px;">
+                        </div>
+                        <div class=" col-md-6">
+                            <form action="<?= base_url('welcome/validateLogin') ?>" method="post">
+                                <div class="form-group">
+                                    <label class="label-font" for="
+                                        exampleFormControlInput1">
+                                        Email</label>
+                                    <input type="text" value="<?= set_value('email'); ?>" class="form-control" name="email" autocomplete="off" id="email" placeholder="Masukan email mu disini ..">
+                                    <small class="text-danger"></small>
+                                </div>
+                                <div class="form-group">
+                                    <label class="label-font" for="
+                                        exampleFormControlInput1">
+                                        Password</label>
+                                    <input type="password" name="password" class="form-control" id="password" placeholder="Masukan password mu disini ..">
+                                    <small class="text-danger"></small>
+                                </div>
+                                <button class="btn btn-block font-weight-bold" style="background-color: #4dbf1c;color:white;font-size:18px;">Login
+                                    </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Login Modal -->
+       
+<!-- Sweetaler Flashdata -->
+<?php if ($this->session->flashdata('success-reg')) : ?>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Kamu berhasil daftar!',
+            text: 'Sekarang kamu boleh login!',
+            showConfirmButton: false,
+            timer: 2500
+        })
+    </script>
+<?php endif; ?>
+
+
+<?php if ($this->session->flashdata('login-success')) : ?>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Kamu berhasil daftar!',
+            text: 'Sekarang login yuk!',
+            showConfirmButton: false,
+            timer: 2500
+        })
+    </script>
+<?php endif; ?>
+
+<?php if ($this->session->flashdata('success-logout')) : ?>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Kamu berhasil logout!',
+            text: 'Selamat tinggal, Sampai jumpa lagi!',
+            showConfirmButton: false,
+            timer: 2500
+        })
+    </script>
+<?php endif; ?>
+
+
+<?php if ($this->session->flashdata('fail-login')) : ?>
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Gagal login!',
+            text: 'Silahkan Periksa Kembali Email dan Password Kamu!',
+            showConfirmButton: false,
+            timer: 2500
+        });
+    </script>
+<?php endif; ?>
+
+
+<?php if ($this->session->flashdata('fail-pass')) : ?>
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Password Salah!',
+            text: 'Silahkan Periksa Kembali Password Kamu!',
+            showConfirmButton: false,
+            timer: 2500
+        });
+    </script>
+<?php endif; ?>
+
+
+<?php if ($this->session->flashdata('not-login')) : ?>
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Harap Login Terlebih Dahulu !',
+            text: 'Silahkan Login Dahulu !',
+            showConfirmButton: false,
+            timer: 2500
+        });
+    </script>
+<?php endif; ?>
+
+<?php if ($this->session->flashdata('false-login')) : ?>
+    <script>
+        $("#exampleModalCenter").modal("show")
+    </script>
+<?php endif; ?>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="<?php echo base_url() ?>assets/js/jquery-3.3.1.min.js"></script>
