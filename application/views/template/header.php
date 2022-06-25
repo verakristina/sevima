@@ -64,8 +64,8 @@
 								<li class="nav-item submenu dropdown">
 									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
 									<ul class="dropdown-menu">
-										<li class="nav-item"><a class="nav-link" href="<?= base_url('welcome') ?>">Sebagai Admin</a>
-										<li class="nav-item"><a class="nav-link" href="courses.html">Sebagai Guru</a>
+										<li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#loginAdmin">Sebagai Admin</a>
+										<li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#loginGuru">Sebagai Guru</a>
 										<li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModalCenter">Sebagai Siswa</a></li>
 									</ul>
 								</li> 
