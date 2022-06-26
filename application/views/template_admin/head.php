@@ -133,6 +133,29 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-user-alt"></i>
               <p>
+                Materi
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('admin/data_materi') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Materi</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('admin/add_materi') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tambah Materi</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-user-alt"></i>
+              <p>
                 Kelas
                 <i class="right fas fa-angle-left"></i>
               </p>

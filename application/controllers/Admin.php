@@ -209,5 +209,67 @@ class Admin extends CI_Controller
         $this->session->set_flashdata('user-delete', 'berhasil');
         redirect('admin/data_guru');
     }
+
+    //materi
+
+    public function data_materi()
+    {
+        $this->load->model('m_materi');
+
+        $data['user'] = $this->db->get_where('admin', ['email' =>
+            $this->session->userdata('email')])->row_array();
+
+        $data['user'] = $this->m_materi->tampil_data()->result();
+        $this->load->view('template_admin/head');
+        $this->load->view('admin/data_materi', $data);
+        $this->load->view('template_admin/footer');
+    }
+
+    public function add_materi()
+    {
+        $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required|trim|min_length[1]', [
+            'required' => 'Harap isi kolom deskripsi.',
+            'min_length' => 'deskripsi terlalu pendek.',
+        ]);
+        
+            $upload_video = $_FILES['video'];
+
+            if ($upload_video) {
+                $config['allowed_types'] = 'mp4|mkv|mov';
+                $config['max_size'] = '0';
+                $config['upload_path'] = './assets/materi_video';
+
+                $this->load->library('upload', $config);
+
+                if ($this->upload->do_upload('video')) {
+                    $video = $this->upload->data('file_name');
+                } else {
+                    $this->upload->display_errors();
+                }
+            }
+            $data = [
+                'nama_guru' => htmlspecialchars($this->input->post('nama_guru', true)),
+                'nama_mapel' => htmlspecialchars($this->input->post('nama_mapel', true)),
+                'video' => $video,
+                'deskripsi' => htmlspecialchars($this->input->post('deskripsi', true)),
+                'kelas' => htmlspecialchars($this->input->post('kelas', true)),
+            ];
+
+            $this->db->insert('materi', $data);
+            $this->session->set_flashdata('success-reg', 'Berhasil!');
+            redirect(base_url('admin/data_materi'));
+      
+    }
+    public function data_kelas()
+    {
+        $this->load->model('m_kelas');
+        $data['user'] = $this->db->get_where('admin', ['email' =>
+            $this->session->userdata('email')])->row_array();
+
+        $data['user'] = $this->m_kelas->tampil_data()->result();
+        $this->load->view('template_admin/head');
+        $this->load->view('admin/data_kelas', $data);
+        $this->load->view('template_admin/footer');
+    }
 }
 ?>
